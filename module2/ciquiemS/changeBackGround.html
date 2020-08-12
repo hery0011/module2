@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>change couleur background</title>
+</head>
+<body id="fond">
+<select id="couleur" onclick="couleur();">
+	<option value="red">red</option>
+	<option value="orange">orange</option>
+	<option value="green">green</option>
+	<option value="blue">blue</option>
+	<option value="yellow">yellow</option>
+</select>
+
+<script type="text/javascript">
+function couleur(){
+
+	var couleur = document.getElementById("couleur").value;
+
+	switch(couleur){
+		case 'red':
+		document.getElementById("fond").style.background="red";
+		break;
+		case 'orange':
+		document.getElementById("fond").style.background="orange";
+		break;
+		case 'green':
+		document.getElementById("fond").style.background="green";
+		break;
+		case 'blue':
+		document.getElementById("fond").style.background="blue";
+		break;
+		case 'yellow':
+		document.getElementById("fond").style.background="yellow";
+		break;
+	}
+}
+</script>
+
+</body>
+</html>

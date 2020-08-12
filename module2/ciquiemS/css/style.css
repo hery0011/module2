@@ -1,0 +1,22 @@
+#mail{
+	width: 100%;
+}
+#psd{
+	width: 100%;
+}
+.cadre{
+	padding-top: 20px;
+	border: 1px solid black;
+	box-shadow: 5px 10px;
+	border-radius: 10px;
+}
+.margeTop{
+	padding-top: 70px;
+}
+.login{
+	text-align: center;
+	font-family: Courier New;
+}
+label{
+	font-family: Comic Sans MS;
+}

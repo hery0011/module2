@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>js confirm</title>
+</head>
+<body>
+	<div>
+		<label>nom:</label>
+		<input type="text" name="nom">
+	</div>
+	<div>
+		<label>prenom</label>
+		<input type="text" name="prenom">
+	</div>
+	<button onclick="confirmation();">enregistrer</button>
+
+	<script type="text/javascript">
+		function confirmation(){
+			if (confirm("vous etes sur?")) {
+				window.location.assign("changeBackGround.html");
+			}else{
+				window.location.assign("JsConfirm.html");
+			}
+		}
+	</script>
+
+</body>
+</html>

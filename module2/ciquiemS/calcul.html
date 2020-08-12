@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calcule jquery</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+
+	<style type="text/css">
+		.cadre{
+			border: 1px solid black;
+			box-shadow: 5px 10px;
+			background: yellow;
+			border-radius: 10px;
+		}
+		.tbl{
+			margin-left: 50px;
+		}
+		input[type = button]:hover{
+			background:green;
+		}
+		.container{
+			padding-top: 50px;
+		}
+	</style>
+</head>
+<body>
+<dir class="container">
+	<div class="row">
+		<div class="col-md-4"></div>
+
+		<div class="col-md-4 cadre">
+			<form name="form">
+				<input class="calc-display form-control">
+			</form>	
+
+			<table class="tbl">
+				<tr>
+					<td></td>
+					<td></td>
+					<td><input class="form-control" type="button" value="<" onclick="del()"></td>
+					<td><input class="form-control" type="button" value="C" onclick="clean()"></td>
+				</tr>
+				<tr>
+					<td><input class="form-control" type="button" value="7" onclick="insert(7)"></td>
+					<td><input class="form-control" type="button" value="8" onclick="insert(8)"></td>
+					<td><input class="form-control" type="button" value="9" onclick="insert(9)"></td>
+					<td><input class="form-control" type="button" value="/" onclick="insert('/')"></td>
+				</tr>
+
+				<tr>
+					<td><input class="form-control" type="button" value="4" onclick="insert(4)"></td>
+					<td><input class="form-control" type="button" value="5" onclick="insert(5)"></td>
+					<td><input class="form-control" type="button" value="6" onclick="insert(6)"></td>
+					<td><input class="form-control" type="button" value="*" onclick="insert('*')"></td>
+				</tr>
+
+				<tr>
+					<td><input class="form-control" type="button" value="1" onclick="insert(1)"></td>
+					<td><input class="form-control" type="button" value="2" onclick="insert(2)"></td>
+					<td><input class="form-control" type="button" value="3" onclick="insert(3)"></td>
+					<td><input class="form-control" type="button" value="-" onclick="insert('-')"></td>
+				</tr>
+
+				<tr>
+					<td><input class="form-control" type="button" value="." onclick="insert('.')"></td>
+					<td><input class="form-control" type="button" value="0" onclick="insert(0)"></td>
+					<td><input class="form-control" type="button" value="=" onclick="eql()"></td>
+					<td><input class="form-control" type="button" value="+" onclick="insert('+')"></td>
+				</tr>
+
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			function insert(num){
+				$(".calc-display").val($(".calc-display").val() + num);
+			}
+
+			function eql(){
+				$(".calc-display").val(eval($(".calc-display").val()));
+			}
+
+			function clean(){
+				$(".calc-display").val(' ');
+			}
+
+			function del(){
+				var value = $(".calc-display").val();
+				$(".calc-display").val(value.substring(0, value.length - 1));
+			}
+		</script>
+
+		<div class="col-md-4"></div>
+	</div>
+</dir>
+
+</body>
+</html>

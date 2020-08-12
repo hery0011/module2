@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>jquery confirm</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<label>nom:</label>
+		<input type="text" name="nom">
+	</div>
+	<div>
+		<label>prenom</label>
+		<input type="text" name="prenom">
+	</div>
+	<button class="confirm">enregistrer</button>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".confirm").on('click', function(){
+				if(confirm("vous etes sur?")){
+					window.location.assign("changeBackGround.html");
+				}else{
+					window.location.assign("jqueryConfirm.html");
+				}
+			})
+		})
+	</script>
+
+</body>
+</html>

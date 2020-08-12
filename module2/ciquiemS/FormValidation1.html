@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<style type="text/css">
+		.error-message{
+			display: inline;
+			color: red;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<form method="POST" action="insert.html">
+	<div>
+		<label>nom:</label>
+		<input type="text" name="nom" id="nom" id="nom">
+		<span class="error-message">erreur</span>
+	</div>
+	<div>
+		<label>prenom:</label>
+		<input type="text" name="prenom" id="prenom" id="prenom">
+		<span class="error-message"></span>
+	</div>
+	<div>
+		<label>tel</label>
+		<input type="text" name="tel" id="tel" id="tel">
+		<span class="error-message"></span>
+	</div>
+	<input type="submit" name="envoyer" value="envoyer" id="envoyer">
+</form>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#nom").mouseleave(function(){
+		if ($("#nom").val() == "") {
+			$("#nom").css("border-color","red");
+			$("#nom").next(".error-message").fadeIn().text("veuillez entrer votre nom");
+		}else if(!$("#nom").val().match(/^[a-z]+$/i)){
+			$("#nom").css("border-color","red");
+			$("#nom").next(".error-message").fadeIn().text("veuillez entrer un nom valide");
+		}
+		else{
+			$("#nom").css("border-color","blue");
+			$("#nom").next(".error-message").fadeOut();
+		}
+		});
+
+
+		$("#prenom").mouseleave(function(){
+		if ($("#prenom").val() == "") {
+			$("#prenom").css("border-color","red");
+			$("#prenom").next(".error-message").fadeIn().text("veuillez entrer votre prenom");
+		}else if(!$("#prenom").val().match(/^[a-z]+$/i)){
+			$("#prenom").css("border-color","red");
+			$("#prenom").next(".error-message").fadeIn().text("veuillez entrer un prenom valide");
+		}
+		else{
+			$("#prenom").css("border-color","blue");
+			$("#prenom").next(".error-message").fadeOut();
+		}
+		});
+
+
+		$("#tel").mouseleave(function(){
+		if ($("#tel").val() == "") {
+			$("#tel").css("border-color","red");
+			$("#tel").next(".error-message").fadeIn().text("veuillez entrer votre tel");
+		}else if(!$("#tel").val().match(/^[0-9]{10}$/i)){
+			$("#tel").css("border-color","red");
+			$("#tel").next(".error-message").fadeIn().text("veuillez entrer un tel valide");
+		}
+		else{
+			$("#tel").css("border-color","blue");
+			$("#tel").next(".error-message").fadeOut();
+		}
+		});	
+
+
+
+
+		$("#envoyer").click(function(){
+			var valid = true;
+
+		if ($("#nom").val() == "") {
+			valid = false;
+		}else if(!$("#nom").val().match(/^[a-z]+$/i)){
+			valid = false;
+		}
+		else{
+			$("#nom").css("border-color","blue");
+			$("#nom").next(".error-message").fadeOut();
+		}
+
+
+		if ($("#prenom").val() =="") {
+			valid = false;
+		}else if(!$("#prenom").val().match(/^[a-z]+$/i)){
+			valid = false;
+		}
+		else{
+			$("#prenom").css("border-color","blue");
+			$("#prenom").next(".error-message").fadeOut();
+		}
+
+
+		if ($("#tel").val() =="") {
+			valid = false;
+		}else if(!$("#tel").val().match(/^[0-9]{10}$/i)){
+			valid = false;
+		}else{
+			$("#tel").css("border-color","blue");
+			$("#tel").next(".error-message").fadeOut();
+		}
+		return valid;
+		})
+	})
+</script>
+</body>
+</html>
